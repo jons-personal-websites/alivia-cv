@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alivia Kan — Business Development & Franchise Expansion</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Alivia Kan — Business Development Executive specializing in franchise expansion across APAC & global markets.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/tailwind-config.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="font-body text-charcoal bg-cream leading-relaxed overflow-x-hidden">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-[1000] bg-cream/85 backdrop-blur-xl border-b border-transparent transition-all duration-400 h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-8 h-full flex items-center justify-between">
+      <a href="#" class="font-display text-2xl font-semibold text-charcoal no-underline tracking-tight">Alivia Kan</a>
+
+      <ul id="navLinks" class="hidden md:flex items-center gap-8 list-none">
+        <li><a href="#about" class="nav-link relative text-sm font-medium text-charcoal-light no-underline tracking-wide transition-colors hover:text-terracotta">About</a></li>
+        <li><a href="#experience" class="nav-link relative text-sm font-medium text-charcoal-light no-underline tracking-wide transition-colors hover:text-terracotta">Experience</a></li>
+        <li><a href="#education" class="nav-link relative text-sm font-medium text-charcoal-light no-underline tracking-wide transition-colors hover:text-terracotta">Education</a></li>
+        <li><a href="#fit" class="nav-link relative text-sm font-medium text-charcoal-light no-underline tracking-wide transition-colors hover:text-terracotta">Fit Assessment</a></li>
+        <li>
+          <a href="cv.html" target="_blank" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-charcoal text-cream text-xs font-semibold tracking-wider rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-terracotta hover:-translate-y-0.5 hover:shadow-lg no-underline">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            Download CV
+          </a>
+        </li>
+      </ul>
+
+      <button id="hamburger" onclick="toggleMobileNav()" class="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1">
+        <span class="block w-6 h-0.5 bg-charcoal rounded transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-charcoal rounded transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-charcoal rounded transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden absolute top-[72px] left-0 right-0 bg-cream/[0.98] backdrop-blur-xl border-b border-border-custom">
+      <div class="flex flex-col gap-4 px-8 py-6">
+        <a href="#about" onclick="closeMobileNav()" class="text-sm font-medium text-charcoal-light no-underline">About</a>
+        <a href="#experience" onclick="closeMobileNav()" class="text-sm font-medium text-charcoal-light no-underline">Experience</a>
+        <a href="#education" onclick="closeMobileNav()" class="text-sm font-medium text-charcoal-light no-underline">Education</a>
+        <a href="#fit" onclick="closeMobileNav()" class="text-sm font-medium text-charcoal-light no-underline">Fit Assessment</a>
+        <a href="cv.html" target="_blank" onclick="closeMobileNav()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-charcoal text-cream text-xs font-semibold tracking-wider rounded-full border-none cursor-pointer w-fit no-underline">
+          <i data-lucide="download" class="w-3.5 h-3.5"></i>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="min-h-screen flex items-center pt-[calc(72px+2rem)] px-8 pb-16 relative overflow-hidden">
+    <!-- Morphing background shape -->
+    <div class="absolute -right-[5%] top-[10%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] bg-gradient-to-br from-terracotta-pale via-gold-light to-cream-dark opacity-50 animate-morph z-0"></div>
+
+    <div class="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center relative z-[1]">
+      <!-- Text -->
+      <div id="heroText" class="max-w-[580px] lg:max-w-none text-center lg:text-left mx-auto lg:mx-0">
+        <p class="hero-child font-body text-xs font-semibold tracking-[0.15em] uppercase text-terracotta mb-4">Hello, I'm</p>
+        <h1 class="hero-child font-display text-5xl sm:text-6xl lg:text-7xl font-semibold leading-none tracking-tight text-charcoal mb-5">Alivia Kan</h1>
+        <p class="hero-child font-display text-lg lg:text-xl font-normal italic text-charcoal-light leading-relaxed mb-6">Business Development &amp; Franchise Expansion across APAC &amp; Global Markets</p>
+        <p class="hero-child text-[0.95rem] text-muted leading-relaxed mb-8">
+          I help restaurant brands go international. From Bangkok to New York, I turn franchise ambitions into thriving operations — managing every detail from design to launch to compliance.
+        </p>
+        <div class="hero-child flex gap-4 flex-wrap justify-center lg:justify-start">
+          <a href="cv.html" target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 bg-terracotta text-cream font-body text-sm font-semibold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-charcoal hover:-translate-y-0.5 hover:shadow-xl no-underline">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            Download CV
+          </a>
+          <a href="#fit" class="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-charcoal font-body text-sm font-semibold tracking-wide rounded-full border-[1.5px] border-border-custom cursor-pointer transition-all duration-300 hover:border-terracotta hover:text-terracotta hover:-translate-y-0.5 no-underline">
+            <i data-lucide="scan-search" class="w-4 h-4"></i>
+            Check Fit
+          </a>
+        </div>
+        <div class="hero-child flex items-center gap-3 mt-6 justify-center lg:justify-start">
+          <span class="text-xs text-muted font-medium tracking-wide">Get in touch</span>
+          <div class="w-6 h-px bg-border-custom"></div>
+          <a href="https://wa.me/6592280456" target="_blank" title="WhatsApp" class="w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-charcoal-light transition-all duration-300 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] hover:-translate-y-0.5 hover:shadow-md no-underline">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://t.me/+6592280456" target="_blank" title="Telegram" class="w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-charcoal-light transition-all duration-300 hover:bg-[#0088cc] hover:text-white hover:border-[#0088cc] hover:-translate-y-0.5 hover:shadow-md no-underline">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alivia-kan/" target="_blank" title="LinkedIn" class="w-10 h-10 rounded-full bg-white border border-border-custom flex items-center justify-center text-charcoal-light transition-all duration-300 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] hover:-translate-y-0.5 hover:shadow-md no-underline">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div id="heroPhoto" class="flex justify-center items-center relative order-first lg:order-last">
+        <div class="photo-ring absolute w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] rounded-full border-[1.5px] border-gold-light animate-spin-slow"></div>
+        <img src="alivia_profile_pic_no_background.png" alt="Alivia Kan" class="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full object-cover object-top shadow-[0_20px_60px_rgba(184,92,56,0.15)] relative z-[1]">
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div id="scrollIndicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs tracking-widest uppercase">
+      <span>Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-terracotta to-transparent animate-pulse-line"></div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BAR ==================== -->
+  <div id="statsBar" class="bg-white border border-border-custom rounded-[20px] py-10 px-6 sm:px-12 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 -mt-12 mx-4 sm:mx-8 max-w-[1200px] lg:mx-auto relative z-[2] shadow-[0_4px_30px_rgba(26,26,26,0.06)]">
+    <div class="text-center">
+      <div class="font-display text-4xl font-bold text-terracotta leading-none stat-counter" data-target="6">0</div>
+      <div class="text-xs text-muted mt-1 font-medium">Years in Business Dev</div>
+    </div>
+    <div class="text-center">
+      <div class="font-display text-4xl font-bold text-terracotta leading-none stat-counter" data-target="10">0</div>
+      <div class="text-xs text-muted mt-1 font-medium">Markets Expanded Into</div>
+    </div>
+    <div class="text-center">
+      <div class="font-display text-4xl font-bold text-terracotta leading-none stat-counter" data-target="2">0</div>
+      <div class="text-xs text-muted mt-1 font-medium">Languages Spoken</div>
+    </div>
+    <div class="text-center">
+      <div class="font-display text-4xl font-bold text-terracotta leading-none stat-counter" data-target="5">0</div>
+      <div class="text-xs text-muted mt-1 font-medium">Industries Covered</div>
+    </div>
+  </div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="py-24 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-terracotta mb-3">About</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-charcoal mb-4">Bridging brands to new markets</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mt-10">
+      <div class="gsap-reveal">
+        <p class="text-base text-charcoal-light leading-relaxed mb-5">
+          I'm a bilingual (English & Chinese) business development professional based in Singapore, with nearly a decade of experience connecting brands to their next market. My career spans <strong class="text-charcoal">F&B franchise expansion</strong>, <strong class="text-charcoal">beauty & lifestyle marketing</strong>, <strong class="text-charcoal">magazine publishing</strong>, and <strong class="text-charcoal">fashion retail</strong> — always at the intersection of brand strategy and hands-on execution.
+        </p>
+        <p class="text-base text-charcoal-light leading-relaxed">
+          At Paradise Group, I lead end-to-end franchise expansion across Asia and the USA. Before that, I drove digital strategy and brand building across six markets at Alliance Group. I bring a rare blend of strategic thinking, cross-cultural fluency, and operational rigor to everything I do.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gold-light cursor-default">
+          <div class="text-2xl mb-3">&#127758;</div>
+          <div class="font-display text-lg font-semibold mb-1">APAC & Global</div>
+          <div class="text-xs text-muted leading-relaxed">Hands-on expansion across 10+ international markets</div>
+        </div>
+        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gold-light cursor-default">
+          <div class="text-2xl mb-3">&#127860;</div>
+          <div class="font-display text-lg font-semibold mb-1">F&B Expertise</div>
+          <div class="text-xs text-muted leading-relaxed">Full franchise lifecycle from site design to launch audits</div>
+        </div>
+        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gold-light cursor-default">
+          <div class="text-2xl mb-3">&#128200;</div>
+          <div class="font-display text-lg font-semibold mb-1">Digital Strategy</div>
+          <div class="text-xs text-muted leading-relaxed">Multi-platform marketing across social, e-commerce & content</div>
+        </div>
+        <div class="gsap-reveal bg-white border border-border-custom rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-gold-light cursor-default">
+          <div class="text-2xl mb-3">&#128483;</div>
+          <div class="font-display text-lg font-semibold mb-1">Bilingual</div>
+          <div class="text-xs text-muted leading-relaxed">Native English & Chinese for cross-border communication</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience" class="py-24">
+    <div class="max-w-[1200px] mx-auto px-8 pb-10 gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-terracotta mb-3">Experience</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-charcoal mb-4">Where I've made an impact</h2>
+      <p class="text-base text-muted max-w-xl leading-relaxed">Click "Learn more" on any achievement to explore the deeper story behind it.</p>
+    </div>
+
+    <!-- Paradise Group -->
+    <div class="gsap-reveal flavor-paradise relative py-16 px-8 bg-paradise-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(72px+2rem)]">
+          <h3 class="font-display text-2xl font-bold leading-tight text-paradise mb-2">Paradise Group</h3>
+          <p class="font-display text-base italic text-muted mb-3">&#27138;&#22825;&#39184;&#39278;&#38598;&#22242;</p>
+          <p class="text-sm font-semibold text-charcoal mb-1">Business Development Executive</p>
+          <p class="text-xs text-muted leading-relaxed">May 2022 – Present &middot; 3 yrs 10 mos<br>Singapore &middot; On-site</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-paradise/[0.08] text-paradise border border-paradise/20">F&B &middot; Franchise Expansion</span>
+        </div>
+        <div>
+          <p class="text-[0.95rem] text-charcoal-light leading-relaxed mb-6">Lead franchise support and expansion across Asia and global markets. Act as a key liaison between HQ and franchise partners to ensure seamless market entry and brand consistency.</p>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">International Expansion:</strong> Supported growth across Bangkok, Vietnam, Cambodia, Malaysia, Myanmar, Indonesia, the Philippines, and the USA.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Paradise Group international franchise expansion across 8+ APAC countries and the USA, coordinating market entry for a major Singapore F&B group')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Design & Construction:</strong> Coordinated store layout approvals and construction timelines across all franchise locations.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Coordinating restaurant store layout approvals and construction timelines across multiple international franchise locations for Paradise Group')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Procurement:</strong> Assisted franchise partners with equipment sourcing and proprietary inventory management systems.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Assisting international franchise partners with restaurant equipment sourcing and proprietary inventory management')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">HR & Training:</strong> Supported recruitment planning and delivered HQ-led training programs to franchise teams.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Supporting franchise partner recruitment planning and delivering Singapore HQ-led training programs for F&B franchise teams')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Marketing & Launch:</strong> Strategized opening campaigns and provided localized execution toolkits for each market.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Creating and strategizing restaurant opening campaigns with localized execution toolkits for each APAC market')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Operations & Audits:</strong> Conducted pre-opening checks, SOP reviews, and annual audits to ensure brand readiness.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Conducting pre-opening checks, SOP reviews, and annual franchise audits to ensure brand readiness and quality standards')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Trademark Support:</strong> Tracked global trademark registrations, renewals, and IP usage across all markets.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Managing global trademark registrations, renewals, and IP usage tracking across 10+ international markets')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alliance Group -->
+    <div class="gsap-reveal flavor-alliance relative py-16 px-8 bg-alliance-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div class="lg:sticky lg:top-[calc(72px+2rem)]">
+          <h3 class="font-display text-2xl font-bold leading-tight text-alliance mb-2">Alliance Group Limited</h3>
+          <p class="text-sm font-semibold text-charcoal mb-1">Marketing & Communications Executive</p>
+          <p class="text-xs text-muted leading-relaxed">Oct 2019 – Sep 2021 &middot; 2 yrs<br>Singapore &middot; Hybrid</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-alliance/[0.08] text-alliance border border-alliance/20">Beauty &middot; Lifestyle Brands</span>
+        </div>
+        <div>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Brand Elevation:</strong> Built and managed the company brand portfolio across Singapore, China, HK, Malaysia, Thailand, and Taiwan.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Building and managing a beauty/lifestyle brand portfolio across 6 Asian markets including Singapore, China, Hong Kong, Malaysia, Thailand, and Taiwan')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Digital Strategy:</strong> Managed marketing across Facebook, Instagram, WeChat, Line, and e-commerce platforms (Shopify, TMall, HKTVmall).
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Managing multi-platform digital marketing strategy across Facebook, Instagram, WeChat, Line, Shopify, TMall, and HKTVmall for beauty/lifestyle brands')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Content Creation:</strong> Managed copywriting for WeChat and developed the brand's first official Chinese website.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Creating WeChat content in Chinese and developing the first official Chinese language website for a beauty/lifestyle brand')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Project Management:</strong> Led agencies in developing brand content and multi-channel campaigns.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Leading external agencies in developing brand content and multi-channel marketing campaigns for beauty/lifestyle products')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">
+              <strong class="text-charcoal">Sales Support:</strong> Designed training materials and marketing collaterals to drive conversions.
+              <button class="expand-btn ml-1 px-2 py-0.5 text-[0.7rem] font-semibold text-muted bg-cream-dark rounded-full border-none cursor-pointer transition-all hover:text-terracotta hover:bg-terracotta-pale align-middle" onclick="expandContext(this, 'Designing sales training materials and marketing collaterals to drive conversions for beauty/lifestyle products')">Learn more</button>
+              <div class="ai-context mt-2 p-4 bg-cream rounded-xl text-sm leading-relaxed text-charcoal-light border-l-[3px] border-gold hidden"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPH Magazines -->
+    <div class="gsap-reveal flavor-sph relative py-16 px-8 bg-sph-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-sph mb-2">SPH Magazines Pte Ltd</h3>
+          <p class="text-sm font-semibold text-charcoal mb-1">Administrative Assistant</p>
+          <p class="font-display text-sm italic text-muted mb-3">Cosmopolitan SG & Singapore Women's Weekly</p>
+          <p class="text-xs text-muted leading-relaxed">Jul 2015 – Dec 2015 &middot; 6 mos</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-sph/[0.06] text-sph border border-sph/[0.15]">Publishing &middot; Media</span>
+        </div>
+        <div>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Supported sales and marketing teams for <strong class="text-charcoal">Cleo</strong>, <strong class="text-charcoal">Cosmopolitan</strong>, and <strong class="text-charcoal">Harper's Bazaar</strong>.</li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Liaised with advertising clients and designed sales sheets for contract quotations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- F J Benjamin -->
+    <div class="gsap-reveal flavor-fjbenjamin relative py-16 px-8 bg-fjbenjamin-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-fjbenjamin mb-2">F J Benjamin</h3>
+          <p class="text-sm font-semibold text-charcoal mb-1">Customer Excellence Leader (La Senza)</p>
+          <p class="text-xs text-muted leading-relaxed">Apr 2014 – Oct 2014 &middot; 7 mos</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-fjbenjamin/[0.08] text-fjbenjamin border border-fjbenjamin/[0.15]">Fashion &middot; Retail</span>
+        </div>
+        <div>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Selected for the Group's prestigious <strong class="text-charcoal">management trainee programme</strong>.</li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Consistently achieved monthly sales targets through curated customer experiences.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- JobSquare -->
+    <div class="gsap-reveal flavor-jobsquare relative py-16 px-8 bg-jobsquare-bg overflow-hidden">
+      <div class="exp-accent"></div>
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-12 items-start">
+        <div>
+          <h3 class="font-display text-2xl font-bold leading-tight text-jobsquare mb-2">JobSquare</h3>
+          <p class="text-sm font-semibold text-charcoal mb-1">Assistant Recruitment Consultant</p>
+          <p class="text-xs text-muted leading-relaxed">Aug 2013 – Oct 2013 &middot; 3 mos</p>
+          <span class="inline-block mt-4 px-3 py-1 rounded-full text-[0.7rem] font-semibold tracking-wide uppercase bg-jobsquare/[0.08] text-jobsquare border border-jobsquare/[0.15]">Recruitment &middot; HR</span>
+        </div>
+        <div>
+          <ul class="exp-list list-none space-y-4">
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Liaised with over <strong class="text-charcoal">50 corporate clients</strong> and candidates.</li>
+            <li class="relative pl-6 text-[0.92rem] leading-relaxed text-charcoal-light">Negotiated service endorsements and published brand stories on Jobs Central.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section id="education" class="py-24 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-terracotta mb-3">Education</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-charcoal mb-10">Academic foundation</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="gsap-reveal edu-card relative bg-white border border-border-custom rounded-2xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="font-display text-xl font-semibold text-charcoal mb-1">Curtin Singapore</h3>
+        <p class="text-sm text-charcoal-light mb-1">Bachelor of Arts (B.A.), Mass Communication / Media Studies</p>
+        <p class="text-xs text-muted mb-4">2015 – 2017</p>
+        <div class="text-sm text-charcoal-light leading-relaxed space-y-1">
+          <p><strong class="text-charcoal">Specialization:</strong> Journalism & Marketing</p>
+          <p><strong class="text-charcoal">Activities:</strong> Events Coordinator of Student Committee; managed external vendors for large-scale student events.</p>
+        </div>
+      </div>
+      <div class="gsap-reveal edu-card relative bg-white border border-border-custom rounded-2xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="font-display text-xl font-semibold text-charcoal mb-1">Ngee Ann Polytechnic</h3>
+        <p class="text-sm text-charcoal-light mb-1">Diploma, Business Studies</p>
+        <p class="text-xs text-muted mb-4">2011 – 2014</p>
+        <div class="text-sm text-charcoal-light leading-relaxed space-y-1">
+          <p><strong class="text-charcoal">Specialization:</strong> Entrepreneurship & Marketing</p>
+          <p><strong class="text-charcoal">Activities:</strong> Student Liaison Officer for National Youth Business Challenge 2013; HR Officer of BA Appreciation Club.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LANGUAGES ==================== -->
+  <section class="py-16 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-terracotta mb-3">Languages</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-charcoal mb-8">Cross-cultural fluency</h2>
+    </div>
+    <div class="gsap-reveal flex gap-8 flex-wrap">
+      <div class="flex-1 min-w-[200px] bg-white border border-border-custom rounded-2xl py-6 px-10 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="font-display text-2xl font-semibold text-charcoal mb-1">English</div>
+        <div class="text-xs text-terracotta font-semibold">Native / Bilingual Proficiency</div>
+      </div>
+      <div class="flex-1 min-w-[200px] bg-white border border-border-custom rounded-2xl py-6 px-10 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        <div class="font-display text-2xl font-semibold text-charcoal mb-1">&#20013;&#25991;</div>
+        <div class="text-xs text-terracotta font-semibold">Native / Bilingual Proficiency</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MARKETS ==================== -->
+  <section class="py-8 pb-24 px-8 max-w-[1200px] mx-auto">
+    <div class="gsap-reveal">
+      <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-terracotta mb-3">Global Reach</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-charcoal mb-2">Markets I've operated in</h2>
+    </div>
+    <div class="flex flex-wrap gap-3 mt-8">
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127480;&#127468;</span>Singapore</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127481;&#127469;</span>Thailand</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127483;&#127475;</span>Vietnam</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127472;&#127469;</span>Cambodia</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127474;&#127486;</span>Malaysia</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127474;&#127474;</span>Myanmar</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127470;&#127465;</span>Indonesia</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127477;&#127469;</span>Philippines</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127482;&#127480;</span>USA</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127464;&#127475;</span>China</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127469;&#127472;</span>Hong Kong</span>
+      <span class="market-tag px-5 py-2 bg-white border border-border-custom rounded-full text-sm font-medium text-charcoal-light transition-all duration-300 cursor-default hover:bg-terracotta hover:text-cream hover:border-terracotta hover:-translate-y-0.5 hover:shadow-md"><span class="mr-1.5">&#127481;&#127484;</span>Taiwan</span>
+    </div>
+  </section>
+
+  <!-- ==================== FIT ASSESSMENT ==================== -->
+  <section id="fit" class="fit-glow relative bg-charcoal text-cream py-20 px-8 overflow-hidden">
+    <div class="max-w-3xl mx-auto relative z-[1]">
+      <div class="gsap-reveal">
+        <p class="font-body text-xs font-bold tracking-[0.2em] uppercase text-gold mb-3">Fit Assessment</p>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-cream mb-4">Am I the right fit for your role?</h2>
+        <p class="text-base text-cream/60 max-w-xl leading-relaxed mb-10">Paste a job description below and I'll give you an honest take on how my experience lines up — including where I'd shine and where there might be gaps.</p>
+      </div>
+      <div class="gsap-reveal">
+        <textarea id="fitTextarea" placeholder="Paste the job description here..." class="w-full min-h-[160px] p-5 bg-white/[0.07] border border-white/[0.15] rounded-2xl text-cream font-body text-sm leading-relaxed resize-y transition-all duration-300 placeholder:text-cream/35 focus:outline-none focus:border-terracotta focus:bg-white/10"></textarea>
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-xs text-cream/40">Powered by AI &middot; Grounded in my real experience</span>
+          <button id="fitBtn" onclick="assessFit()" class="px-8 py-3 bg-terracotta text-cream font-body text-sm font-semibold tracking-wide rounded-full border-none cursor-pointer transition-all duration-300 hover:bg-terracotta-light hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0">Assess Fit</button>
+        </div>
+        <div id="fitResult" class="hidden mt-8 p-6 bg-white/[0.05] border border-white/10 rounded-2xl text-sm leading-relaxed text-cream/85"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-8 text-center border-t border-border-custom">
+    <p class="font-display text-xl font-semibold text-charcoal mb-2">Alivia Kan</p>
+    <p class="text-xs text-muted">Business Development &middot; Franchise Expansion &middot; APAC & Global Markets</p>
+  </footer>
+
+  <!-- ==================== AI CHAT WIDGET ==================== -->
+  <button id="chatFab" onclick="toggleChat()" title="Ask me anything" class="fixed bottom-8 right-8 w-[60px] h-[60px] rounded-full bg-terracotta text-cream border-none cursor-pointer flex items-center justify-center shadow-[0_6px_24px_rgba(184,92,56,0.35)] z-[999] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_30px_rgba(184,92,56,0.5)]">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+  </button>
+
+  <div id="chatPanel" class="fixed bottom-[6.5rem] right-8 w-[400px] max-h-[550px] bg-white rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] z-[998] flex flex-col overflow-hidden opacity-0 translate-y-5 scale-95 pointer-events-none transition-all duration-350 max-md:right-3 max-md:left-3 max-md:w-auto max-md:bottom-[5.5rem] max-md:max-h-[70vh]"
+    style="transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);">
+    <div class="px-6 py-5 bg-charcoal text-cream flex items-center gap-3">
+      <img src="alivia_profile_pic.jpg" alt="Alivia" class="w-9 h-9 rounded-full object-cover">
+      <div>
+        <h4 class="text-sm font-semibold mb-0.5">Alivia Kan</h4>
+      </div>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-5 flex flex-col gap-3 min-h-[300px] max-h-[380px] bg-cream">
+      <div class="chat-msg-bot max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-sm text-sm leading-relaxed bg-white text-charcoal border border-border-custom self-start">Hi! I'm Alivia — ask me anything about my experience, skills, or career!</div>
+    </div>
+    <div class="px-3 py-2 flex gap-2 justify-center bg-cream/50 border-t border-border-custom">
+      <a href="https://wa.me/6592280456" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 transition-all duration-300 hover:bg-[#25D366] hover:text-white no-underline">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/+6592280456" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[0.7rem] font-semibold bg-[#0088cc]/10 text-[#0088cc] border border-[#0088cc]/20 transition-all duration-300 hover:bg-[#0088cc] hover:text-white no-underline">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Telegram
+      </a>
+    </div>
+    <div class="px-4 py-3 border-t border-border-custom flex gap-2 bg-white">
+      <input id="chatInput" type="text" placeholder="Ask about my experience..." onkeydown="if(event.key==='Enter')sendChat()" class="flex-1 px-4 py-2.5 border border-border-custom rounded-full font-body text-sm bg-cream text-charcoal transition-all focus:outline-none focus:border-terracotta placeholder:text-muted">
+      <button id="chatSend" onclick="sendChat()" class="w-10 h-10 rounded-full bg-terracotta text-cream border-none cursor-pointer flex items-center justify-center transition-all duration-300 flex-shrink-0 hover:bg-charcoal disabled:opacity-40 disabled:cursor-not-allowed">
+        <i data-lucide="send" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script src="js/main.js"></script>
+</body>
+</html>

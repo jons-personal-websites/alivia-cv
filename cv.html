@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alivia Kan — CV</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracotta: #b85c38;
+      --sidebar-bg: #2c2420;
+      --sidebar-text: #e8ddd3;
+      --sidebar-muted: #a89888;
+      --gold: #c9a96e;
+      --cream: #fdf6ee;
+      --charcoal: #1a1a1a;
+      --body-text: #3a3a3a;
+      --muted: #777;
+      --border: #e8e2d9;
+      --rose: #9e6b7b;
+      --navy: #2c3e50;
+      --plum: #6d5d7e;
+      --forest: #4a7c69;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--charcoal);
+      background: #e8e0d8;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media screen {
+      body { padding: 20px 0; }
+      .print-bar {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #e8e0d8;
+      }
+      .print-bar button {
+        padding: 10px 28px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn-primary { background: var(--terracotta); color: var(--cream); }
+      .btn-primary:hover { background: var(--charcoal); }
+      .btn-secondary { background: white; color: var(--charcoal); border: 1px solid #d0c8bc; }
+      .btn-secondary:hover { background: #f5f0eb; }
+    }
+
+    /* ---- A4 container ---- */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: white;
+      display: flex;
+      overflow: hidden;
+    }
+
+    @media screen {
+      .page { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      body { background: white; padding: 0; margin: 0; }
+      .page { box-shadow: none; margin: 0; width: 100%; height: 100vh; }
+      .print-bar { display: none; }
+    }
+
+    /* ========= SIDEBAR ========= */
+    .sidebar {
+      width: 74mm;
+      min-width: 74mm;
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 16mm 8mm 14mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .sidebar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--terracotta), var(--gold) 50%, var(--terracotta));
+    }
+
+    .photo-wrap {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
+
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px solid var(--terracotta);
+    }
+
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.25);
+    }
+
+    .photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sidebar-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-tagline {
+      font-size: 8px;
+      text-align: center;
+      color: var(--sidebar-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .sidebar-section { margin-bottom: 20px; }
+
+    .sidebar-heading {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-item {
+      font-size: 10px;
+      color: var(--sidebar-text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-dot {
+      width: 5px;
+      height: 5px;
+      min-width: 5px;
+      border-radius: 50%;
+      background: var(--terracotta);
+    }
+
+    /* Education */
+    .edu-sidebar-item { margin-bottom: 14px; }
+    .edu-sidebar-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.4;
+    }
+    .edu-school-name {
+      font-size: 9px;
+      color: var(--sidebar-muted);
+      margin-top: 2px;
+    }
+    .edu-spec {
+      font-size: 8.5px;
+      color: var(--sidebar-muted);
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    /* Languages */
+    .lang-list { list-style: none; }
+
+    .lang-list li {
+      font-size: 10px;
+      color: var(--sidebar-text);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .lang-list li span:last-child {
+      font-size: 8.5px;
+      color: var(--sidebar-muted);
+      font-style: italic;
+    }
+
+    /* Skills */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 8px;
+      padding: 3px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--sidebar-text);
+      letter-spacing: 0.3px;
+    }
+
+    /* ========= MAIN CONTENT ========= */
+    .main {
+      flex: 1;
+      padding: 14mm 11mm 12mm 12mm;
+      overflow: hidden;
+    }
+
+    .main-header { margin-bottom: 6px; }
+
+    .main-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.1;
+    }
+
+    .main-title {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 9.5px;
+      line-height: 1.6;
+      color: var(--body-text);
+      padding: 10px 0;
+      border-top: 2px solid var(--terracotta);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4px;
+    }
+
+    /* Section heading */
+    .section-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- Experience cards ---- */
+    .exp-item {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .exp-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 2px;
+    }
+
+    .exp-head {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .exp-badge {
+      font-size: 7px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 1.5px 7px;
+      border-radius: 3px;
+      color: white;
+      position: relative;
+      top: -0.5px;
+    }
+
+    .exp-role {
+      font-size: 9.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 3px;
+    }
+
+    .exp-list {
+      padding-left: 14px;
+      font-size: 9.5px;
+      color: var(--body-text);
+      line-height: 1.55;
+      list-style: none;
+    }
+
+    .exp-list li {
+      margin-bottom: 1px;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    .exp-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 3.5px;
+      height: 3.5px;
+      border-radius: 50%;
+    }
+
+    /* Flavor colors per role */
+    .flavor-paradise::before { background: var(--terracotta); }
+    .flavor-paradise .exp-badge { background: var(--terracotta); }
+    .flavor-paradise .exp-list li::before { background: var(--terracotta); }
+
+    .flavor-alliance::before { background: var(--rose); }
+    .flavor-alliance .exp-badge { background: var(--rose); }
+    .flavor-alliance .exp-list li::before { background: var(--rose); }
+
+    .flavor-sph::before { background: var(--navy); }
+    .flavor-sph .exp-badge { background: var(--navy); }
+    .flavor-sph .exp-list li::before { background: var(--navy); }
+
+    .flavor-fjb::before { background: var(--plum); }
+    .flavor-fjb .exp-badge { background: var(--plum); }
+    .flavor-fjb .exp-list li::before { background: var(--plum); }
+
+    .flavor-jobsquare::before { background: var(--forest); }
+    .flavor-jobsquare .exp-badge { background: var(--forest); }
+    .flavor-jobsquare .exp-list li::before { background: var(--forest); }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <button class="btn-primary" onclick="window.print()">Save as PDF</button>
+    <button class="btn-secondary" onclick="window.close()">Close</button>
+  </div>
+
+  <div class="page">
+    <!-- ======= SIDEBAR ======= -->
+    <aside class="sidebar">
+      <div class="photo-wrap">
+        <img src="alivia_profile_pic.jpg" alt="Alivia Kan" class="photo">
+      </div>
+      <div class="sidebar-name">Alivia Kan</div>
+      <div class="sidebar-tagline">Business Development<br>APAC &amp; Global Markets</div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Contact</div>
+        <div class="contact-item">
+          <span class="contact-dot"></span>
+          <span>Singapore</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Education</div>
+        <div class="edu-sidebar-item">
+          <div class="edu-degree">B.A. Mass Communication</div>
+          <div class="edu-school-name">Curtin Singapore &middot; 2015–2017</div>
+          <div class="edu-spec">Journalism &amp; Marketing</div>
+        </div>
+        <div class="edu-sidebar-item">
+          <div class="edu-degree">Dip. Business Studies</div>
+          <div class="edu-school-name">Ngee Ann Polytechnic &middot; 2011–2014</div>
+          <div class="edu-spec">Entrepreneurship &amp; Marketing</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Languages</div>
+        <ul class="lang-list">
+          <li><span>English</span> <span>Native</span></li>
+          <li><span>Chinese</span> <span>Native</span></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Core Skills</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Franchise Expansion</span>
+          <span class="skill-tag">Brand Strategy</span>
+          <span class="skill-tag">Digital Marketing</span>
+          <span class="skill-tag">Project Management</span>
+          <span class="skill-tag">Cross-Cultural Ops</span>
+          <span class="skill-tag">WeChat / Line</span>
+          <span class="skill-tag">Trademark &amp; IP</span>
+          <span class="skill-tag">SOP &amp; Audits</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ======= MAIN CONTENT ======= -->
+    <div class="main">
+      <div class="main-header">
+        <div class="main-name">Alivia Kan</div>
+        <div class="main-title">Business Development &middot; Franchise Expansion &middot; Project Management &amp; Marketing</div>
+      </div>
+
+      <div class="summary">
+        Results-driven business development professional with experience spanning franchise expansion across 8+ APAC markets, multi-channel digital marketing, and end-to-end brand management. Proven ability to coordinate cross-border operations, launch new market entries, and build lasting franchise partnerships. Bilingual in English and Chinese.
+      </div>
+
+      <div class="section-title">Experience</div>
+
+      <div class="exp-item flavor-paradise">
+        <div class="exp-head">
+          <span class="exp-company">Paradise Group &#27138;&#22825;&#39184;&#39278;&#38598;&#22242;</span>
+          <span class="exp-badge">F&amp;B &middot; Franchise</span>
+        </div>
+        <div class="exp-role">Business Development Executive &middot; May 2022 – Present &middot; Singapore</div>
+        <ul class="exp-list">
+          <li>Lead franchise support and expansion across Bangkok, Vietnam, Cambodia, Malaysia, Myanmar, Indonesia, the Philippines, and the USA.</li>
+          <li>Coordinated store layout approvals, construction timelines, equipment sourcing, and proprietary inventory management.</li>
+          <li>Supported recruitment planning and delivered HQ-led training programs to franchise teams.</li>
+          <li>Strategized opening campaigns and provided localized execution toolkits for each market.</li>
+          <li>Conducted pre-opening checks, SOP reviews, and annual audits to ensure brand readiness.</li>
+          <li>Tracked global trademark registrations, renewals, and IP usage.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item flavor-alliance">
+        <div class="exp-head">
+          <span class="exp-company">Alliance Group Limited</span>
+          <span class="exp-badge">Beauty &middot; eCommerce</span>
+        </div>
+        <div class="exp-role">Marketing &amp; Communications Executive &middot; Oct 2019 – Sep 2021 &middot; Singapore</div>
+        <ul class="exp-list">
+          <li>Built and managed brand portfolio across Singapore, China, HK, Malaysia, Thailand, and Taiwan.</li>
+          <li>Managed digital marketing across Facebook, Instagram, WeChat, Line, Shopify, TMall, and HKTVmall.</li>
+          <li>Created WeChat content and developed the brand's first official Chinese website.</li>
+          <li>Led agencies in developing brand content and multi-channel campaigns.</li>
+          <li>Designed training materials and marketing collaterals to drive conversions.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item flavor-sph">
+        <div class="exp-head">
+          <span class="exp-company">SPH Magazines Pte Ltd</span>
+          <span class="exp-badge">Media &middot; Publishing</span>
+        </div>
+        <div class="exp-role">Administrative Assistant (Cosmopolitan SG &amp; Singapore Women's Weekly) &middot; Jul – Dec 2015</div>
+        <ul class="exp-list">
+          <li>Supported sales and marketing teams for Cleo, Cosmopolitan, and Harper's Bazaar.</li>
+          <li>Liaised with advertising clients and designed sales sheets for contract quotations.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item flavor-fjb">
+        <div class="exp-head">
+          <span class="exp-company">F J Benjamin (La Senza)</span>
+          <span class="exp-badge">Luxury Retail</span>
+        </div>
+        <div class="exp-role">Customer Excellence Leader &middot; Apr – Oct 2014</div>
+        <ul class="exp-list">
+          <li>Selected for the Group's management trainee programme.</li>
+          <li>Consistently achieved monthly sales targets through curated customer experiences.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item flavor-jobsquare">
+        <div class="exp-head">
+          <span class="exp-company">JobSquare</span>
+          <span class="exp-badge">HR &middot; Recruitment</span>
+        </div>
+        <div class="exp-role">Assistant Recruitment Consultant &middot; Aug – Oct 2013</div>
+        <ul class="exp-list">
+          <li>Liaised with over 50 corporate clients and candidates.</li>
+          <li>Negotiated service endorsements and published brand stories on Jobs Central.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
