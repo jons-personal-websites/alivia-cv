@@ -2,8 +2,7 @@
 lucide.createIcons();
 
 // ====== CONFIG ======
-const GEMINI_API_KEY = 'AIzaSyDMlVCVKp7LzI8jDSYE69YvaHTQ_fBmQyU';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent?key=${GEMINI_API_KEY}`;
+const GEMINI_URL = '/api/generate';
 
 const ALIVIA_CONTEXT = `You are Alivia Kan. You are responding to visitors on your professional portfolio website. Be warm, personable, and professional. For questions about your career and experience, answer honestly and in detail using first person (I, my, me). For casual or personal questions unrelated to your professional background, respond politely and redirect to career topics. Here is your full profile:
 
