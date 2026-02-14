@@ -142,6 +142,41 @@ gsap.fromTo('.market-tag',
   }
 );
 
+// ====== CURSOR GLOW ON EXPERIENCE SECTIONS ======
+document.querySelectorAll('.flavor-paradise, .flavor-alliance, .flavor-sph, .flavor-fjbenjamin, .flavor-jobsquare').forEach(section => {
+  const glow = document.createElement('div');
+  glow.className = 'cursor-glow';
+  glow.style.cssText = 'position:absolute;width:300px;height:300px;border-radius:50%;pointer-events:none;opacity:0;transition:opacity 0.4s ease;z-index:0;';
+  section.appendChild(glow);
+
+  // Pick the flavor color
+  const colors = {
+    'flavor-paradise': 'rgba(184, 92, 56, 0.06)',
+    'flavor-alliance': 'rgba(158, 107, 123, 0.06)',
+    'flavor-sph': 'rgba(44, 62, 80, 0.06)',
+    'flavor-fjbenjamin': 'rgba(109, 93, 126, 0.06)',
+    'flavor-jobsquare': 'rgba(74, 124, 105, 0.06)',
+  };
+
+  for (const [cls, color] of Object.entries(colors)) {
+    if (section.classList.contains(cls)) {
+      glow.style.background = `radial-gradient(circle, ${color}, transparent 70%)`;
+      break;
+    }
+  }
+
+  section.addEventListener('mousemove', (e) => {
+    const rect = section.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left - 150) + 'px';
+    glow.style.top = (e.clientY - rect.top - 150) + 'px';
+    glow.style.opacity = '1';
+  });
+
+  section.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+  });
+});
+
 // ====== NAVIGATION ======
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {

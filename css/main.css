@@ -138,7 +138,7 @@ body::before {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184, 92, 56, 0.04), transparent 70%);
+  background: radial-gradient(circle, rgba(184, 92, 56, 0.12), transparent 70%);
   pointer-events: none;
 }
 
@@ -153,8 +153,8 @@ body::before {
     -45deg,
     transparent,
     transparent 40px,
-    rgba(158, 107, 123, 0.03) 40px,
-    rgba(158, 107, 123, 0.03) 41px
+    rgba(158, 107, 123, 0.09) 40px,
+    rgba(158, 107, 123, 0.09) 41px
   );
   pointer-events: none;
 }
@@ -171,8 +171,8 @@ body::before {
       90deg,
       transparent,
       transparent 60px,
-      rgba(44, 62, 80, 0.025) 60px,
-      rgba(44, 62, 80, 0.025) 61px
+      rgba(44, 62, 80, 0.08) 60px,
+      rgba(44, 62, 80, 0.08) 61px
     );
   pointer-events: none;
 }
@@ -187,8 +187,8 @@ body::before {
   background: linear-gradient(
     135deg,
     transparent 45%,
-    rgba(109, 93, 126, 0.04) 45%,
-    rgba(109, 93, 126, 0.04) 55%,
+    rgba(109, 93, 126, 0.1) 45%,
+    rgba(109, 93, 126, 0.1) 55%,
     transparent 55%
   );
   pointer-events: none;
@@ -203,7 +203,7 @@ body::before {
   height: 200px;
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(74, 124, 105, 0.05) 2px,
+    rgba(74, 124, 105, 0.12) 2px,
     transparent 2px
   );
   background-size: 20px 20px;
@@ -235,10 +235,6 @@ body::before {
 }
 
 /* Chat FAB steam Easter egg */
-#chatFab {
-  position: relative;
-}
-
 #chatFab::before,
 #chatFab::after {
   content: "";
@@ -287,5 +283,132 @@ body::before {
     transform: translateY(-12px) rotate(0deg) scaleX(0.8);
     opacity: 0;
   }
+}
+
+/* ====== SECTION HOVER MICRO-INTERACTIONS ====== */
+
+/* Experience role blocks: accent bar widens + bg accent intensifies on hover */
+.flavor-paradise,
+.flavor-alliance,
+.flavor-sph,
+.flavor-fjbenjamin,
+.flavor-jobsquare {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.flavor-paradise:hover .exp-accent,
+.flavor-alliance:hover .exp-accent,
+.flavor-sph:hover .exp-accent,
+.flavor-fjbenjamin:hover .exp-accent,
+.flavor-jobsquare:hover .exp-accent {
+  width: 6px;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-accent {
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Icon badge pulse on role hover */
+.flavor-paradise:hover .bg-paradise\/\[0\.08\],
+.flavor-alliance:hover .bg-alliance\/\[0\.08\],
+.flavor-sph:hover .bg-sph\/\[0\.08\],
+.flavor-fjbenjamin:hover .bg-fjbenjamin\/\[0\.08\],
+.flavor-jobsquare:hover .bg-jobsquare\/\[0\.08\] {
+  animation: iconPulse 0.6s ease-out;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Metric callout number scale on hover */
+.metric-callout {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-callout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.metric-callout:hover .metric-number {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.1);
+}
+
+.metric-callout .metric-number {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stats bar individual stat hover */
+#statsBar > div {
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+#statsBar > div:hover {
+  transform: translateY(-3px);
+}
+
+#statsBar > div:hover .stat-counter {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.3s ease;
+  transform: scale(1.08);
+}
+
+.stat-counter {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Education cards: shimmer accent bar on hover */
+.edu-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.edu-card:hover::before {
+  background: linear-gradient(90deg, #b85c38, #c9a96e, #b85c38);
+  background-size: 200% 100%;
+  animation: shimmerBar 1.5s ease infinite;
+}
+
+@keyframes shimmerBar {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Language cards hover glow */
+#about ~ section .flex-1.min-w-\[200px\] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Market tags: stagger ripple on hover within container */
+.market-tag {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Fit assessment textarea glow on focus */
+#fitTextarea:focus {
+  box-shadow: 0 0 0 3px rgba(184, 92, 56, 0.1), 0 0 30px rgba(184, 92, 56, 0.05);
+}
+
+/* Expand/Learn more button hover polish */
+.expand-btn {
+  transition: all 0.25s ease;
+}
+
+.expand-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(184, 92, 56, 0.15);
+}
+
+/* Footer leaf hover spin */
+footer svg {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+footer:hover svg {
+  transform: rotate(15deg) scale(1.15);
 }
 
