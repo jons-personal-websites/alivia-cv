@@ -19,7 +19,7 @@ EXPERIENCE:
    - Design & Construction: Coordinated store layout approvals and construction timelines.
    - Procurement: Assisted partners with equipment sourcing and proprietary inventory management.
    - HR & Training: Supported recruitment planning and delivered HQ-led training programs.
-   - Marketing & Launch: Strategized opening campaigns and provided localized execution toolkits.
+   - Marketing & Launch: Oversaw regional and international franchise marketing with HQ; strategized opening campaigns and provided localized execution toolkits.
    - Operations & Audits: Conducted pre-opening checks, SOP reviews, and annual audits.
    - Trademark Support: Tracked global trademark registrations, renewals, and IP usage.
 

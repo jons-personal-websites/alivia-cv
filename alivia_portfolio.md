@@ -19,7 +19,7 @@ Lead franchise support and expansion across Asia and global markets. Act as a ke
 * **HR & Training:** Supported recruitment planning and delivered HQ-led training programs.
 
 
-* **Marketing & Launch:** Strategized opening campaigns and provided localized execution toolkits.
+* **Marketing & Launch:** Oversaw regional and international franchise marketing with HQ; strategized opening campaigns and provided localized execution toolkits.
 * **Operations & Audits:** Conducted pre-opening checks, SOP reviews, and annual audits to ensure brand readiness.
 * **Trademark Support:** Tracked global trademark registrations, renewals, and IP usage.
 
